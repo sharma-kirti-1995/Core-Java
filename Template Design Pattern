@@ -1,0 +1,9 @@
+Behaviour Pattern
+Template Method is a behavioral design pattern that allows you to defines a skeleton of an algorithm in a base class and let subclasses override the steps without 
+changing the overall algorithm’s structure.
+Core Java libraries that implements Template design Pattern:
+All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.
+All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
+In javax.servlet.http.HttpServlet class, all the doXXX() methods.
+
+Identification: Template Method can be recognized if you see a method in base class that calls a bunch of other methods that are either abstract or empty.
