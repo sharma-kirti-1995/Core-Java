@@ -1,0 +1,4 @@
+Visitor pattern is Behavioral pattern
+is used when we have to perform an operation on a group of similar kind of Objects. With the help of visitor pattern, we can move the operational logic
+from the objects to another class. For example, think of a Shopping cart where we can add different type of items (Elements).
+Primary goal of the visitor pattern is to moves the operational logic from the objects to another class.Using visitor patterns, we can achieve the open-close principle
