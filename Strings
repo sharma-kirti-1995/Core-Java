@@ -1,1 +1,33 @@
+Immutable class- Immutable class is a class which once created, it's content can not be changed. Immutable classes are good choice for HashMap key as their state 
+cannot be changed once they are created. Objects of immuable classes are also thread safe as threads can not change the value of its fields once it is created.
+
+LINK - https://codepumpkin.com/immutable-class-with-mutable-member-fields-in-java/
+
 Customized Immutable String
+
+class MyImmutableString {
+final private String name;
+final private int id;
+final private Address address;
+// No setters
+
+public void getName() { return name; }
+public void getID() { return id; }
+public void getAddress() { return address);
+//Instead of returning Address, we need to return the clone of address i.e.
+public void getAddress() { return address.clone(); }  // Cloneable Interface should be implemented, this will not affect the mt1 object below.
+public MyImmutableString() { }
+
+}
+
+class MainDemo {
+MyImmutableString mt1 = new MyImmutableString(1,"Kirti", new Address(101,"Ghaziabad"));
+Address address = mt1.getAddress();
+address.setStreet(200);
+address.setCity("Delhi");
+
+SOP(mt1); // Address changed, String is no longer mutable. To overcome this, we need to 
+
+
+
+}
