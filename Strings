@@ -3,6 +3,11 @@ cannot be changed once they are created. Objects of immuable classes are also th
 
 LINK - https://codepumpkin.com/immutable-class-with-mutable-member-fields-in-java/
 
+Ways to prevent Mutablility ->
+1) Dont allow setters in the Address class -> But we dont have access to Address class
+2) Make Child class of Address with setters throwing exception and use that Child class in the main calling code -> Not useful if we have multiple Mutable classes
+   in the Address class itself.
+3) Return clone of object of Address.
 Customized Immutable String
 
 class MyImmutableString {
