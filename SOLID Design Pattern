@@ -21,5 +21,11 @@ Liskov Substitution Principle - Derived types must be Subtitutable for their bas
                                 than the object itself.
                                 For example:
                                 https://www.javaguides.net/2018/02/liskov-substitution-principle.html
+                                Real Time Eg
+                                Base- AccrualTransactionInterface -> editTransaction,addTransaction, getTransactionAmount()
+                                Implementations
+                                GrantTransaction
+                                ExpiredTransaction -> addTransaction() -> throws Exception
+                                In this case it is violation of LSP. And we need to define some other Interface that can cater the requirement of ExpiredTxn
 Interface Segregation Principle - Clients should not be forced to implement unneccessary methods which they will not use
 Dependency Inversion Principle - Depends on abstraction, not on concretion.
