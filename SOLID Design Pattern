@@ -1,1 +1,7 @@
-
+SOLID principles are object-oriented design concepts relevant to software development.
+SOLID principles are an object-oriented approach that are applied to software structure design.
+Single Responsibility Principle 
+Open-Closed Principle
+Liskov Substitution Principle 
+Interface Segregation Principle
+Dependency Inversion Principle
