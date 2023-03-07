@@ -1,7 +1,25 @@
 SOLID principles are object-oriented design concepts relevant to software development.
 SOLID principles are an object-oriented approach that are applied to software structure design.
-Single Responsibility Principle 
-Open-Closed Principle
-Liskov Substitution Principle 
-Interface Segregation Principle
-Dependency Inversion Principle
+Single Responsibility Principle - One class should have one and only one responsibilty. Classes are defined with parameters and Getters-setters.
+Open-Closed Principle - Software Components must be open for extension but closed for Modification. When we want to add a new functionality in any module then instead
+                        of changing the whole logic in the module, we should extend the base class and override some methods.
+                        For e.g. In struts we have Action class extended to override the request processing logic.
+                        public class HelloWorldAction extends Action {
+
+                          @Override
+                          public ActionForward execute(ActionMapping mapping, ActionForm form, 
+                            HttpServletRequest request, HttpServletResponse response)
+                            throws Exception {
+
+                                //Process the request
+                          }
+                        }
+Liskov Substitution Principle - Derived types must be Subtitutable for their base types. LSP means that the classes created by extending our class, 
+                                should be able to fit in the application without fail. This is important for polymorphic behavior through inheritance.This requires the
+                                objects of the subclasses to behave the same way as the superclass objects.
+                                An example of LSP can be custom property editors in Spring framework. Spring provides property editors to represent properties differently 
+                                than the object itself.
+                                For example:
+                                https://www.javaguides.net/2018/02/liskov-substitution-principle.html
+Interface Segregation Principle - Clients should not be forced to implement unneccessary methods which they will not use
+Dependency Inversion Principle - Depends on abstraction, not on concretion.
