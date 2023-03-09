@@ -1,9 +1,78 @@
 Behaviour Pattern
 Template Method is a behavioral design pattern that allows you to defines a skeleton of an algorithm in a base class and let subclasses override the steps without 
 changing the overall algorithm’s structure.
+Have you faced any situation in your programming where you need to define a set of specific steps every time with a fixed order so that this can be enforced by 
+implementation classes? If so, then template method pattern is the solution for you which can be used to enforce these steps (algorithm) in an orderly manner.
+
 Core Java libraries that implements Template design Pattern:
-All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.
-All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
-In javax.servlet.http.HttpServlet class, all the doXXX() methods.
+i)All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.
+ii)All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
+iii)In javax.servlet.http.HttpServlet class, all the doXXX() methods.
 
 Identification: Template Method can be recognized if you see a method in base class that calls a bunch of other methods that are either abstract or empty.
+
+public abstract class Game {  
+      
+       abstract void initialize();  
+       abstract void start();  
+       abstract void end();  
+      
+       public final void play(){  
+  
+          //initialize the game  
+          initialize();  
+  
+          //start game  
+          start();  
+            
+          //end game  
+          end();  
+       }  
+}// End of the Game abstract class.
+
+public class Chess extends Game {  
+     @Override  
+       void initialize() {  
+          System.out.println("Chess Game Initialized! Start playing.");  
+       }  
+     @Override  
+       void start() {  
+          System.out.println("Game Started. Welcome to in the chess game!");  
+       }  
+    @Override  
+       void end() {  
+          System.out.println("Game Finished!");  
+       }  
+}// End of the Chess class. 
+
+public class Soccer extends Game {  
+      
+    @Override  
+       void initialize() {  
+          System.out.println("Soccer Game Initialized! Start playing.");  
+       }  
+  
+    @Override  
+       void start() {  
+          System.out.println("Game Started. Welcome to in the Soccer game!");  
+       }  
+         
+    @Override  
+       void end() {  
+          System.out.println("Game Finished!");  
+       }  
+}// End of the Soccer class.
+
+public class TemplatePatternDemo {  
+  
+public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {  
+          
+         Game game = new Chess();  
+         game.play();     
+       }  
+}// End of the Soccer class.
+
+Key Design Points
+i)Mark template method as final so that implementing class can’t override and change the order of steps.
+ii)In base class, implement all the methods with default implementation so the derived classes need not to define them.
+iii)Mark all methods abstract which derived classes must implement.
