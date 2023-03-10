@@ -1,0 +1,64 @@
+class  PrintEvenOdd implements Runnable {
+   public int LIMIT = 10;
+   Object obj;
+   int max;
+   boolean isEvenNumber;
+   TaskEvenOdd(Printer print, int max, boolean isEvenNumber) {
+        this.print = print;
+        this.max = max;
+        this.isEvenNumber = isEvenNumber;
+    }
+
+   public void run() {
+       int number = isEvenNumber == true ? 2 : 1;
+       while (number<=max) {
+            if(isEvenNumber) {
+               print.printEvenNumber(number);
+            }
+            else{
+               print.printOddNumber(number);
+            
+            }
+            number+=2;
+       
+       }
+   
+   
+   }
+
+}
+
+class Printer {
+  boolean isOdd = false;
+  synchronized void printEven(int number) {
+      while(isOdd = false) {
+            try{
+              wait();
+            }catch() { }
+      }
+       SOP ("Even" + number);
+            isOdd = false;
+            notifyAll();
+
+  }
+  synchronized void printOdd(int number) {
+      while(isOdd = true) {
+            try{
+              wait();
+            }catch() { }
+      }
+       SOP ("Odd" + number);
+            isOdd = true;
+            notifyAll();
+
+  }
+}
+
+class PrintMain {
+Printer print = new Printer();
+Thread t1 = new Thread(new PrintEvenOdd(print,10,true)); // Even
+Thread t1 = new Thread(new PrintEvenOdd(print,10,false)); // Odd
+t1.start();
+t2.start();
+
+}
