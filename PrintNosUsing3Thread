@@ -1,0 +1,46 @@
+class PrintSequence implements Runnable {
+    int Max = 10;
+    int rem;
+    int number = 1;
+    static Object lock = new Object();
+    PrintSequence(int rem) { this.rem = rem; }
+   
+    @Override
+    public void run() {
+        while(number<=Max) {
+          synchronized(lock) {
+             while( numer%3 != rem) {
+                  try{
+                    lock.wait();
+                  }catch(InterruptedException ex) {
+                    ex.printStackTrace();
+                  }
+                  SOP(Thread.currentThread().getName() + number);
+                  number++;
+                  lock.notifyAll();
+             }
+            
+          }
+        
+        }
+    
+    }
+
+
+
+}
+
+class PrintSequenceMain {
+    PrintSequence psr1 = new PrintSequence(0);
+    PrintSequence psr2 = new PrintSequence(1);
+    PrintSequence psr3 = new PrintSequence(2);
+    
+    Thread t1 = new Thread(ps1);
+    Thread t2 = new Thread(ps2);
+    Thread t3 = new Thread(ps3);
+    
+    t1.start();
+    t2.start();
+    t3.start();
+    
+}
