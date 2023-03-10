@@ -1,0 +1,11 @@
+Executor Framework in Java
+i)introduced in JDK 5
+ii)handles creation of thread, creating the thread pool and checking health while running and also terminates if needed
+
+Role of ExecutorService in Java
+i)It is an Interface which provides different methods to start and terminate thread.
+ii)two methods execute() and submit() in ExecutorService - Execute() method is used for threads which is Runnable and submit() method is used for Callable threads.
+iii)allows us to execute tasks on threads asynchronously.
+iv)present in the java.util.concurrent package
+v)helps in maintaining a pool of threads and assigns them tasks
+vi)also provides the facility to queue up tasks until there is a free thread available if the number of tasks is more than the threads available.
