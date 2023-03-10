@@ -1,0 +1,8 @@
+
+
+
+Breaking of Singleton in Reflection and Serialization:
+https://www.geeksforgeeks.org/prevent-singleton-pattern-reflection-serialization-cloning/
+
+Breaking of Singleton in Multi-threading:
+Double checking lock
