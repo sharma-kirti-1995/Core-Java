@@ -1,2 +1,21 @@
 
 https://intellipaat.com/blog/interview-question/java-8-interview-questions/
+
+Predicate - is a Func IF, returns true or false based on condition.
+
+Supplier - Supplier is a functional interface, in Java 8 under package java.util.function. A supplier is any method which takes no arguments and returns a value.
+           E.g: Getter
+            @FunctionalInterface
+            public interface Supplier<T> {
+
+              T get();
+
+            }
+
+Consumer - Whereas, a consumer is a method that consumes some value (as in method argument), and does some operations on them. So a Consumer is any method which takes 
+arguments and returns nothing. Eg: Setter
+
+Function
+
+https://roytuts.com/java-supplier-consumer/#:~:text=A%20supplier%20is%20any%20method,takes%20arguments%20and%20returns%20nothing.
+https://medium.com/swlh/understanding-java-8s-consumer-supplier-predicate-and-function-c1889b9423d
