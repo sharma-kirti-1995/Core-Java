@@ -1,0 +1,9 @@
+1) Provides higher level Interface that make subsystems to work easier.
+2)Is like a helper to client, whether to use it or not
+
+
+class OracleHelper {
+   public static Connection getOracleDBConnection() {  }
+
+
+}
