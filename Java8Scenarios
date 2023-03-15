@@ -1,0 +1,10 @@
+public static void main(String[] args) {
+  List<Integer> list = Arrays.asList({1,null,8,null,0,9,10,6,null});
+  
+  list.stream().sorted().collect(Collectors.toList()); /* will throw exception because it stores null values & sorting will give exception,  
+                                                          java.lang.NullPointerException: 
+                                                          Cannot invoke "java.lang.Comparable.compareTo(Object)" because "c1" is null */
+  list.stream().sorted(Comparator.nullsFirst(Comparator.naturalOrder()).collect(Collectors.toList());
+  
+
+}
