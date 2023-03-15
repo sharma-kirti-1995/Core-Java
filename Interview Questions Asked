@@ -1,5 +1,15 @@
+1)Why ReentrantLock if synchronized is already there?
+https://stackoverflow.com/questions/11821801/why-use-a-reentrantlock-if-one-can-use-synchronizedthis#:~:text=A%20ReentrantLock%20is%20unstructured%2C%20unlike,lock.
 
-ReentrantLock vs synchronized
-https://www.geeksforgeeks.org/reentrant-lock-java/
+2)ReentrantLock vs synchronized
+https://javarevisited.blogspot.com/2013/03/reentrantlock-example-in-java-synchronized-difference-vs-lock.html
+
+3)Volatile keyword
+
+4) Executors Framework
+
+5)Future & Completable future.
+
+6) Callable vs Runnable
 
 
