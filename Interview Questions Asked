@@ -1,21 +1,54 @@
+Common questions- https://www.simplilearn.com/java-8-interview-questions-and-answers-article#java_8_interview_questions__12_years_10_years_5_years_experienced_level
+1)Features of Java 8
+Streams API
+Lambda expressions and Functional interfaces
+Metaspace instead of Perm Gen
+Method Reference  System.out::println
+flatMap and Map 
 
-https://intellipaat.com/blog/interview-question/java-8-interview-questions/
+Optional class - container of not null objects and used to represent null with absent value.
+Integer corporateActionId = getFromDB();
+Integer corporateActionStatus = getFromDB(corporateActionId);
+Integer val2 = null;
+Optional<Integer> a = Optional.ofNullable(corporateActionStatus);  // can be null as well as not null
+Option<Integer> b = Optional.of(corporateActionId);                // must not be null
 
-Predicate - is a Func IF, returns true or false based on condition.
+Integer value1 = a.orElse(new Integer(0));
+Integer value2 = b.get();
 
-Supplier - Supplier is a functional interface, in Java 8 under package java.util.function. A supplier is any method which takes no arguments and returns a value.
-           E.g: Getter
-            @FunctionalInterface
-            public interface Supplier<T> {
+2) findFirst() vs findAny()
+List list = {1,2,3,1,4,5};
+Optional<Integer> value = list.stream().findFirst();
+if(value.isPresent()) value.get();
 
-              T get();
+list.stream().filter(x-> X>1).findFirst();
+https://mkyong.com/java8/java-8-stream-findfirst-and-findany/
 
-            }
+3) parallel vs sequential stream in java 8
+https://www.geeksforgeeks.org/parallel-vs-sequential-stream-in-java/
 
-Consumer - Whereas, a consumer is a method that consumes some value (as in method argument), and does some operations on them. So a Consumer is any method which takes 
-arguments and returns nothing. Eg: Setter
 
-Function
+List list = Arrays.asList("Hello", "G", "E", "K");
+list.stream().forEach(System.out::print); //Sequencial stream, single thread to process the pipelining and not multi-cores processor are used.
+list.parallelStream().forEach(SOP); // GKEHello -> order is not maintained as parallel streams are maintained internally & multiple cores of processor are used for
+                                                   processing.
+ 
+4) Difference between predicate and function - Both are functional interface with some pre-defined methods.
 
-https://roytuts.com/java-supplier-consumer/#:~:text=A%20supplier%20is%20any%20method,takes%20arguments%20and%20returns%20nothing.
-https://medium.com/swlh/understanding-java-8s-consumer-supplier-predicate-and-function-c1889b9423d
+Predicate<T> - is a single argument function that returns either true or false.
+helps in unit-testing. Has different methods like test(),
+Eg: Predicate<Integer> lesserthan = i -> (i < 18); 
+    SOP(lesserThan.test(10));
+In stream().filter(x->x>2) => condition inside the filter is also a predicate
+
+Function-Function<T,R> is also a single argument function, although it returns an object instead. In this case, the “T” represents the type of function input, and 
+the “R” denotes the type of result.
+Function<String,Integer> func = x-> x.length();
+Integer len = func.apply("Kirti");
+https://mkyong.com/java8/java-8-function-examples/
+
+
+
+
+
+
