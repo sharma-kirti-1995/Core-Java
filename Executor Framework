@@ -9,3 +9,21 @@ iii)allows us to execute tasks on threads asynchronously.
 iv)present in the java.util.concurrent package
 v)helps in maintaining a pool of threads and assigns them tasks
 vi)also provides the facility to queue up tasks until there is a free thread available if the number of tasks is more than the threads available.
+
+class CorporateActionNoticeProcessing implements Runnable {
+
+ public CorporateActionNoticeProcessing(CorporateAction ca) {
+    this.ca = ca;
+  }
+  public void run() {
+     // Input is corporateAction -> and in the Message table, it enters the data
+     
+  }
+
+}
+
+Runnable runnable = new CorporateActionNoticeProcessing("");
+ExecutorService exc = Executors.newFixedThreadPool(10); newCacheThreadPool(5)
+exc.execute(new CorporateActionNoticeProcessing(new CA(generatedId)));
+
+newFixedThreadPool vs newCacheThreadPool -> https://stackoverflow.com/questions/949355/executors-newcachedthreadpool-versus-executors-newfixedthreadpool
