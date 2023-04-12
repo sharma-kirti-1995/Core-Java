@@ -1,13 +1,22 @@
-class Student implements Comparator {
+class Student {
   int rollNo;
   String name;
   String address;
   
-  public int compare(Object obj1, Object obj2) {
-    return ((Student)obj1).getRollNo().compareTo(((Student)obj2).getRollNo());
-  
-  }
+  Constructor
+  Getters
+  Setters
 
+
+}
+
+public class SortByNameComparator implements Comparator<Student> {
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		// TODO Auto-generated method stub
+		return o1.getName().compareTo(o2.getName());
+	}
 
 }
 
@@ -18,9 +27,12 @@ class MainDemo {
      Student s3 = new Student(3,"Mona","Gzb");
   
      List<Student> list = new ArrayList();
-     Collections.sort(list);
+     Collections.sort(list, new SortByNameComparator());
   
   }
 
 
+
 }
+
+https://www.baeldung.com/java-sort-collection-multiple-fields => Comparator Chaining
