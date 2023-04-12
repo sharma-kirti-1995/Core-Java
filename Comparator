@@ -1,0 +1,26 @@
+class Student implements Comparator {
+  int rollNo;
+  String name;
+  String address;
+  
+  public int compare(Object obj1, Object obj2) {
+    return ((Student)obj1).getRollNo().compareTo(((Student)obj2).getRollNo());
+  
+  }
+
+
+}
+
+class MainDemo {
+  public static void main(String[] str) {
+     Student s1 = new Student(1,"Kirti","Gzb");
+     Student s2 = new Student(2,"Lavita","Gzb");
+     Student s3 = new Student(3,"Mona","Gzb");
+  
+     List<Student> list = new ArrayList();
+     Collections.sort(list);
+  
+  }
+
+
+}
